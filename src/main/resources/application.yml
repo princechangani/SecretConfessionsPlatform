@@ -1,0 +1,23 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: schedule-service
+  main:
+    allow-circular-references: true
+  data:
+    redis:
+      host: localhost
+      port: 6379
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/smpDB"
+    username: "postgres"
+    password: "goku"
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
