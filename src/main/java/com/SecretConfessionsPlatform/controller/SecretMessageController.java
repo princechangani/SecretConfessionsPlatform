@@ -24,14 +24,13 @@ public class SecretMessageController {
     public ResponseEntity<String> createMessage(@RequestBody SecretMessageDto secretMessageDto,HttpServletRequest request) {
         return ResponseEntity.ok(secretMessageService.createSecretMessage(secretMessageDto ,request));
     }
-    @PostMapping("/test")
-    public ResponseEntity<String> createMessage1(@RequestBody SecretMessageDto secretMessageDto,HttpServletRequest request) {
-        return ResponseEntity.ok(secretMessageServiceImpl.createSecretMessage1(secretMessageDto ,request));
-    }
+
+
 
     @GetMapping("/{id}")
     public ResponseEntity<String> readSecretMessage(@PathVariable String id, HttpServletRequest request) {
         String message = secretMessageService.readSecretMessage(id, request);
         return ResponseEntity.ok(message);
     }
+
 }

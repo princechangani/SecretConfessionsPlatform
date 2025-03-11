@@ -17,11 +17,12 @@ import java.time.LocalDateTime;
 @Table(name = "confessions")
 public class Confession {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+
     private String content;
 
-    @Column(nullable = false)
+
     private LocalDateTime createdAt;
 }

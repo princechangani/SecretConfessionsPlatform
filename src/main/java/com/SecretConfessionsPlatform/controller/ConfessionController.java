@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/confessions")
@@ -19,8 +20,8 @@ public class ConfessionController {
     }
 
     @PostMapping
-    public ResponseEntity<ConfessionDto> createConfession(@RequestBody String content) {
-        return ResponseEntity.ok(confessionService.saveConfession(content));
+    public ResponseEntity<ConfessionDto> createConfession(@RequestBody ConfessionDto confessionDto) {
+        return ResponseEntity.ok(confessionService.saveConfession(confessionDto));
     }
 
     @GetMapping

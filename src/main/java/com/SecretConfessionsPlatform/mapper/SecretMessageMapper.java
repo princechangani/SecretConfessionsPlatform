@@ -12,6 +12,7 @@ public class SecretMessageMapper {
         secretMessageDto.setContent(secretMessage.getContent());
         secretMessageDto.setExpiryTime(secretMessage.getExpiryTime());
         secretMessageDto.setViewed(secretMessage.isViewed());
+        secretMessageDto.setIsForDay(secretMessage.getIsForDay());
         return secretMessageDto;
     }
 
@@ -22,6 +23,7 @@ public class SecretMessageMapper {
         secretMessage.setContent(secretMessageDto.getContent());
         secretMessage.setExpiryTime(secretMessageDto.getExpiryTime());
         secretMessage.setViewed(secretMessageDto.isViewed());
+        secretMessage.setIsForDay(secretMessageDto.getIsForDay());
         return secretMessage;
 
     }

@@ -25,17 +25,13 @@ public class ConfessionServiceImpl implements ConfessionService {
 
 
     @Override
-    public ConfessionDto saveConfession(String content) {
-        Confession confession = new Confession();
-        ConfessionDto confessionDto = new ConfessionDto();
+    public ConfessionDto saveConfession(ConfessionDto confessionDto) {
 
-        confessionDto.setContent(content.trim());
         confessionDto.setCreatedAt(LocalDateTime.now());
+        Confession confession = ConfessionMapper.toEntity(confessionDto);
+        Confession savedConfession = confessionRepository.save(confession);
 
-        confession = ConfessionMapper.toEntity(confessionDto);
-        confessionRepository.save(confession);
-
-        return confessionDto ;
+        return ConfessionMapper.toDto(savedConfession);
     }
 
     @Override

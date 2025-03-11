@@ -16,7 +16,6 @@ public class ConfessionMapper {
     }
     public static Confession toEntity (ConfessionDto confessionDto) {
         Confession confession = new Confession();
-        confession.setId(confessionDto.getId());
         confession.setContent(confessionDto.getContent());
         confession.setCreatedAt(confessionDto.getCreatedAt());
         return confession;

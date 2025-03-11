@@ -1,5 +1,6 @@
 package com.SecretConfessionsPlatform.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -25,12 +26,12 @@ public class SecretMessage {
 
     private LocalDateTime expiryTime;
 
-    private boolean viewed = false;
+    private boolean viewed ;
 
     @ElementCollection
     private Set<String> viewedIps = new HashSet<>();
 
-    private boolean isFor24h = false;
+    private Boolean isForDay ;
 
 
 
